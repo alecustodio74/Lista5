@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Alexandre Ricardo Custódio de Souza">
-    <title>1 - Lista de Contatos</title>
+    <title>2 - Médias</title>
 </head>
 <body>
+    <h3>Alunos e médias!</h3>
     <form action="" method="POST">
-        <?php
+       <?php
         for($i=0;$i<5;$i++): ?>
             <input type="text" name="nome[]" placeholder="Nome" />
-            <input type="number" name="tel[]" placeholder="Telefone" />
+        <?php endfor; ?>
+       
+        <?php
+        for($j=0;$j<3;$j++): ?>
+            <input type="double" name="nota1[]" placeholder="Nota1" />
+            <input type="double" name="nota2[]" placeholder="Nota2" />
+            <input type="double" name="nota3[]" placeholder="Nota3" />
             </br>
         <?php endfor; ?>
+       
         <button type="submit">Enviar</button>
 </form>
 
@@ -22,10 +30,16 @@
         try{
             $a = array();
             $nome = $_POST['nome'];
-            $tel = $_POST['tel'];
+            $nota1 = floatval($_POST['nota1']);
+            $nota2 = floatval($_POST['nota2']);
+            $nota3 = floatval($_POST['nota3']);
+            //$media = ($nota1 + $nota2 + $nota3)/3;
             for($i=0;$i<5;$i++){
                 $posicao = $nome[$i];
-                $a[$posicao] = $tel[$i];
+                for ($j=0;$j<5;$j++){
+                    $media = ($nota1 + $nota2 + $nota3)/3;
+                    $a[$posicao] = $media;
+                }
             }
             ksort($a); //ordenando pela chave (nome)
             //ou asort($a) ordenando pelo valor (telefone)
