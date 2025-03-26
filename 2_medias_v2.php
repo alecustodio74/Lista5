@@ -1,8 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alexandre Ricardo Custódio de Souza">
+    <title>Cadastro de Alunos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body style="margin: auto; width: 40%; text-align: center;">
+    <h2>Informe os dados dos alunos</h2>
+    <form action="" method="POST">
+        <?php 
+            for ($i = 1; $i <= 5; $i++): ?>
+            <h5>Aluno <?= $i ?></h5>
+            <input type="text" name="nome<?= $i ?>" placeholder="Nome" required /><br>
+            <input type="number" name="nota<?= $i ?>_1" placeholder="Nota 1" step="0.01" required /><br>
+            <input type="number" name="nota<?= $i ?>_2" placeholder="Nota 2"step="0.01" required /><br>
+            <input type="number" name="nota<?= $i ?>_3" placeholder="Nota 3" step="0.01" required /><br>
+            <br>
+        <?php endfor; ?>
+    </div>
+    </div>
+        <button type="submit">Enviar</button>
+    </form>
+
 <?php
 // Processa os dados quando o formulário for enviado
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    try{
     $alunos = [];
-    
     // Lendo os dados do formulário
     for ($i = 1; $i <= 5; $i++) {
         $nome = $_POST["nome$i"];
@@ -12,48 +38,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         $media = ($nota1 + $nota2 + $nota3) / 3;
         $alunos[$nome] = $media;
+        }
+    }catch (Exception $e) {
+        echo "Erro: ".$e->getMessage();
     }
-    
-    // Ordenando os alunos pela média (maior para menor)
-    arsort($alunos);
+    arsort($alunos); // Ordenando pela média (maior para menor)
+    //ksort($alunos); //ordenando em ordem alfabética (nome)
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Alunos</title>
-</head>
-<body>
-    <h2>Informe os dados dos alunos</h2>
-    <form method="POST">
-        <?php for ($i = 1; $i <= 5; $i++): ?>
-            <h3>Aluno <?= $i ?></h3>
-            Nome: <input type="text" name="nome<?= $i ?>" required><br>
-            Nota 1: <input type="number" name="nota<?= $i ?>_1" step="0.01" required><br>
-            Nota 2: <input type="number" name="nota<?= $i ?>_2" step="0.01" required><br>
-            Nota 3: <input type="number" name="nota<?= $i ?>_3" step="0.01" required><br>
-            <br>
-        <?php endfor; ?>
-        <button type="submit">Enviar</button>
-    </form>
-
     <?php if (!empty($alunos)): ?>
         <h2>Resultados</h2>
-        <table border="1">
-            <tr>
-                <th>Aluno</th>
-                <th>Média</th>
-            </tr>
-            <?php foreach ($alunos as $nome => $media): ?>
-                <tr>
-                    <td><?= htmlspecialchars($nome) ?></td>
-                    <td><?= number_format($media, 2) ?></td>
-                </tr>
-            <?php endforeach; ?>
-        </table>
+          <div class="container text-center" style="border: 1px;">
+            <div class="row row-cols-2">
+                <div class="col"><strong>Aluno</strong></div>
+                <div class="col"><strong>Média</strong></div>
+                <?php foreach ($alunos as $nome => $media): ?>
+                    <div class="col"><?= htmlspecialchars($nome) ?></div>
+                    <div class="col"><?= number_format($media, 2) ?></div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
     <?php endif; ?>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

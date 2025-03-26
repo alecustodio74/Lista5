@@ -7,6 +7,7 @@
     <title>1 - Lista de Contatos</title>
 </head>
 <body>
+    <h2>Informe os dados dos clientes</h2>
     <form action="" method="POST">
         <?php
         for($i=0;$i<5;$i++): ?>
