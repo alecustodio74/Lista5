@@ -1,10 +1,17 @@
+<!--
+1. Crie um formulário que leia dados de 5 contatos: nome e número de
+telefone. Leia os dados e crie um mapa ordenado onde as chaves são os
+nomes dos contatos e os valores são os números de telefone. Verifique se
+há duplicatas de nome ou número de telefone antes de adicionar um novo
+contato. Exiba a lista ordenada pelos nomes dos contatos.
+-->
 <!DOCTYPE html>
 <html lang="pt_BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Alexandre Ricardo Custódio de Souza">
-    <title>1 - Lista de Contatos</title>
+    <title>1 - Formulário de Contatos</title>
 </head>
 <body>
     <h2>Informe os dados dos clientes</h2>
