@@ -8,7 +8,7 @@
 <body>
     <h2>Formulário de Contatos</h2>
     <form action="" method="POST">
-        <?php for ($i = 0; $i < 5; $i++) : ?>
+        <?php for ($i = 0; $i < 2; $i++) : ?>
             <h3>Contato <?= $i ?></h3>
             <label for="nome<?= $i ?>">Nome:</label>
             <input type="text" name="nome[]" required><br>
