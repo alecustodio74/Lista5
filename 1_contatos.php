@@ -6,6 +6,9 @@ há duplicatas de nome ou número de telefone antes de adicionar um novo
 contato. Exiba a lista ordenada pelos nomes dos contatos.
 -->
 <?php
+    require_once("header.php");
+?>
+<?php
     session_start();
     session_destroy();
 ?>
@@ -24,7 +27,8 @@ contato. Exiba a lista ordenada pelos nomes dos contatos.
         .warning { color: red; font-weight: bold; }
     </style>
 </head>
-<body style="margin: auto; width: 40%; text-align: center;">
+<main class="container">
+<body style="margin: auto; text-align: center;">
 
 <h2>Formulário de Contatos</h2>
 
@@ -82,6 +86,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+<?php
+    require_once("footer.php");
+?>
