@@ -33,7 +33,7 @@
               <a class="nav-link" href="5_livros.php">Exercício 5</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://github.com/alecustodio74/Lista5" target="_blank">Git Hub do @alecustodio74</a>
+              <a class="nav-link" href="https://github.com/alecustodio74/Lista5" target="_blank">GitHub do @alecustodio74</a>
             </li>
           </ul>
         </div>

@@ -19,16 +19,16 @@ contato. Exiba a lista ordenada pelos nomes dos contatos.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Alexandre Ricardo Custódio de Souza">
     <title>Formulário de Contatos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        body { font-family: Arial, sans-serif; }
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; text-align: center; }
+        .container { background-color: white; padding: 20px; border-radius: 2%; max-width: 500px; margin: 20px auto; }
         form { width: 300px; margin: 20px auto; }
         label, input { display: block; margin: 5px 0; }
-        .warning { color: red; font-weight: bold; }
+        .warning { color: red; font-weight: bold; };
     </style>
 </head>
 <main class="container">
-<body style="margin: auto; text-align: center;">
+<body>
 
 <h2>Formulário de Contatos</h2>
 

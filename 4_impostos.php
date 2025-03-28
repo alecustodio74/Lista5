@@ -14,7 +14,6 @@ ordenada pelos preços após a aplicação do imposto.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Alexandre Ricardo Custódio de Souza">
     <title>Itens, Preços e Impostos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; text-align: center; }
         form, .result { background-color: white; padding: 20px; border-radius: 5%; max-width: 500px; margin: 20px auto; }
@@ -31,7 +30,7 @@ ordenada pelos preços após a aplicação do imposto.
         <h2>Cadastro de Itens e Preços</h2>
         <p>Preencha o nome e preço de 5 itens:</p>
 
-        <?php for ($i = 1; $i <=1; $i++): ?>
+        <?php for ($i = 1; $i <=5; $i++): ?>
             <label style="font-size: large;" for="nome<?= $i ?>">Item <?= $i ?></label><br>
             <input type="text" id="nome<?= $i ?>" name="nome<?= $i ?>" placeholder="Descrição" required><br>
             <input type="number" id="preco<?= $i ?>" name="preco<?= $i ?>" placeholder="Preço" step="0.01" required><br><br>
@@ -44,7 +43,7 @@ ordenada pelos preços após a aplicação do imposto.
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Lê os dados dos 5 itens e coloca num array
         $itens = [];
-        for ($i = 1; $i <=1; $i++) {
+        for ($i = 1; $i <=5; $i++) {
             $nome = $_POST["nome$i"];
             $preco = floatval($_POST["preco$i"]);
             $itens[$nome] = $preco + ($preco * 0.15); // Aplica o imposto de 15%
