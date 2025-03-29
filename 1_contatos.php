@@ -30,7 +30,7 @@ contato. Exiba a lista ordenada pelos nomes dos contatos.
 <main class="container">
 <body>
 
-<h2>Formulário de Contatos</h2>
+<h3>Formulário de Contatos</h3>
 
 <form method="POST" action="">
     <?php

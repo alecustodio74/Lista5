@@ -28,7 +28,7 @@
 <main class="container">
 <body>
 
-<h2>Cadastro de Livros</h2>
+<h3>Cadastro de Livros</h3>
 
 <form method="post" action="">
     <?php for ($i = 1; $i <= 5; $i++): ?>

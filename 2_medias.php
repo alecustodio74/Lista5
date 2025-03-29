@@ -22,7 +22,7 @@ média das notas (do maior para o menor).
 
 <main class="container">
 <body style="margin: auto; text-align: center;">
-    <h2>Informe os dados dos alunos</h2>
+    <h3>Informe os dados dos alunos</h3>
     <form action="" method="POST">
         <?php 
             for ($i = 1; $i <= 5; $i++): ?>

@@ -13,7 +13,7 @@
     <style>
         body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; text-align: center; }
         .container { background-color: white; padding: 20px; border-radius: 5%; max-width: 500px; margin: 20px auto; }
-        img { width: 80%;}
+        img { width: 90%; border-radius: 5%; filter: drop-shadow(0 0 1rem darkgray)}
     </style>
 </head>
 <main class="container">

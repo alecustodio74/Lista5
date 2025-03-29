@@ -27,7 +27,7 @@ do produto.
 </head>
 <main class="container">
 <body>
-    <h2 style="text-align: center;">Cadastro de Produtos e descontos</h2>
+    <h3>Cadastro de Produtos e descontos</h3>
 
     <form method="POST">
         <?php for ($i = 1; $i <= 5; $i++): ?>

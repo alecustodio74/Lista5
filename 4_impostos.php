@@ -27,7 +27,7 @@ ordenada pelos preços após a aplicação do imposto.
 <body>
 
     <form method="POST">
-        <h2>Cadastro de Itens e Preços</h2>
+        <h3>Cadastro de Itens e Preços</h3>
         <p>Preencha o nome e preço de 5 itens:</p>
 
         <?php for ($i = 1; $i <=5; $i++): ?>
